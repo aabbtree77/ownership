@@ -1,0 +1,19 @@
+# Ignore Rust build artifacts
+target/
+Cargo.lock
+
+# Ignore compiled executables
+*.exe
+*.out
+*.o
+*.so
+*.dll
+*.dylib
+main
+test_ownership
+
+# Ignore editor and OS files
+*.swp
+*.swo
+.DS_Store
+
