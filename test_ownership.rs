@@ -1,22 +1,3 @@
-Three basic ways to modify a list in Rust, to see what Rust's borrow checker is.
-
-ChatGPT prompt:
-
-Show me how to pass a list to a Rust function, modify its 8th lement, and get back an updated list. Show me three cases: mutable, immutable with borrowing, and immutable with ownership transfer.
-
-```bash
-rustc test_ownership.rs && ./test_ownership
-
-Original vector: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-After modify_list_mutable: [0, 0, 0, 0, 0, 0, 0, 1, 0, 0]
-After modify_list_immutable: [0, 0, 0, 0, 0, 0, 0, 1, 0, 0]
-Original remains unchanged: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-After modify_list_ownership: [0, 0, 0, 0, 0, 0, 0, 1, 0, 0]
-```
-
-```rust
-//test_ownership.rs
-
 fn modify_list_mutable(vec: &mut Vec<i32>) {
     if vec.len() > 7 {
         vec[7] += 1; // Modify the 17th element
@@ -62,4 +43,4 @@ fn main() {
     println!("After modify_list_ownership: {:?}", updated_numbers);
     // println!("{:?}", numbers); // Would cause an error! `numbers` is moved
 }
-```
+
