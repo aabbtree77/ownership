@@ -1,4 +1,4 @@
-Three basic ways to modify a list in Rust, to see what Rust's borrow checker is.
+Three basic ways to modify a list in Rust, to see what Rust's borrow checker is about.
 
 ChatGPT prompt:
 
