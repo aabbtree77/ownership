@@ -1,4 +1,4 @@
-Three basic ways to modify a list in Rust, to see what Rust's borrow checker is about.
+Three basic ways to modify a list in Rust, to see what the borrow checker is about.
 
 ```bash
 rustc test_ownership.rs && ./test_ownership
