@@ -137,7 +137,6 @@ fn case_async_lifetime() {
 }
 
 // Case 11: Gc - Smart Trash Bin. It will be cleaned when unused.
-
 fn case_gc() {
     let vec = Gc::new(GcCell::new(vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
     println!("[🗑️ Smart Trash Bin] Before: {:?}", vec.borrow());
