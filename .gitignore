@@ -1,16 +1,17 @@
-# Ignore Rust build artifacts
-target/
-Cargo.lock
+# Ignore target folder (Rust build output)
+/test_full/target/
 
-# Ignore compiled executables
-*.exe
-*.out
-*.o
-*.so
-*.dll
-*.dylib
-main
-test_ownership
+# Ignore Cargo.lock inside test_full
+/test_full/Cargo.lock
+
+# Ignore all binaries across the repo
+**/target/
+**/*.exe
+**/*.dll
+**/*.so
+**/*.dylib
+**/*.a
+**/*.out
 
 # Ignore editor and OS files
 *.swp

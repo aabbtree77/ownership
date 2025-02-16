@@ -1,0 +1,9 @@
+[package]
+name = "test_full"
+version = "0.1.0"
+edition = "2021"   # Ensure it's Rust 2021
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }  # Add Tokio runtime
+gc = "0.4"  # For garbage collection support
+

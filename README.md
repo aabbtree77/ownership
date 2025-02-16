@@ -1,65 +1,35 @@
-Three basic ways to modify a list in Rust, to see what the borrow checker is about.
+## Introduction
 
-```bash
+The codes show numerous ways to modify a list in Rust, to see what the borrow checker is about.
+
+## Basic
+
+```console
+cd test_mini
 rustc test_ownership.rs && ./test_ownership
-
-Original vector: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-After modify_list_mutable: [0, 0, 0, 0, 0, 0, 0, 1, 0, 0]
-After modify_list_immutable: [0, 0, 0, 0, 0, 0, 0, 1, 0, 0]
-Original remains unchanged: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-After modify_list_ownership: [0, 0, 0, 0, 0, 0, 0, 1, 0, 0]
 ```
 
-ChatGPT prompt:
+1. Mutable Borrow - Safe lock: You open, modify, and close it.
+2. Immutable Borrow - Hotel room: You can look but not change anything.
+3. Ownership Transfer - Moving van: You give away the whole thing.
 
-Show me how to pass a list to a Rust function, modify its 8th element, and get back an updated list. Show me three cases: mutable, immutable with borrowing, and immutable with ownership transfer.
+## Advanced
 
-```rust
-//test_ownership.rs
-
-fn modify_list_mutable(vec: &mut Vec<i32>) {
-    if vec.len() > 7 {
-        vec[7] += 1; // Modify the 17th element
-    }
-}
-
-fn modify_list_immutable(vec: &Vec<i32>) -> Vec<i32> {
-    let mut new_vec = vec.clone(); // Create a copy
-    if new_vec.len() > 7 {
-        new_vec[7] += 1;
-    }
-    new_vec
-}
-
-fn modify_list_ownership(vec: Vec<i32>) -> Vec<i32> {
-    let mut new_vec = vec; // Take ownership directly
-    if new_vec.len() > 7 {
-        new_vec[7] += 1;
-    }
-    new_vec
-}
-
-fn main() {
-    let mut numbers = vec![0; 10]; // A vector with 10 zeros
-    
-    println!("Original vector: {:?}", numbers);
-
-    // Case 1: Mutable reference modification
-    modify_list_mutable(&mut numbers);
-    println!("After modify_list_mutable: {:?}", numbers);
-
-    // Reset numbers for the next test
-    let numbers = vec![0; 10];
-
-    // Case 2: Immutable reference modification
-    let updated_numbers = modify_list_immutable(&numbers);
-    println!("After modify_list_immutable: {:?}", updated_numbers);
-    println!("Original remains unchanged: {:?}", numbers);
-
-    // Case 3: Ownership transfer modification
-    let numbers = vec![0; 10]; // Reset again
-    let updated_numbers = modify_list_ownership(numbers);
-    println!("After modify_list_ownership: {:?}", updated_numbers);
-    // println!("{:?}", numbers); // Would cause an error! `numbers` is moved
-}
+```console
+cd test_full
+cargo run
 ```
+
+1. Mutable Borrow - Safe lock: You open, modify, and close it.
+2. Immutable Borrow - Hotel room: You can look but not change anything.
+3. Ownership Transfer - Moving van: You give away the whole thing.
+4. Box - Storage unit: You keep ownership but store it elsewhere.
+5. Rc - Shared Library: Multiple users can read it but not modify it.
+6. Arc - Secure Webpage: Many threads access read-only content.
+7. RefCell - Restroom: Multiple access, but only one can modify at a time.
+8. Mutex - Safe Lock: One at a time access in multi-threaded scenarios.
+9. Async - Server request queue: Processing data asynchronously.
+10. Async Lifetime - Managing a connection that outlives a function.
+11. Gc - Smart Trash Bin: It will be cleaned when unused.
+
+ 
