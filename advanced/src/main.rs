@@ -151,36 +151,28 @@ fn modify_list_gc(vec: Gc<GcCell<Vec<i32>>>) {
 }
 
 fn main() {
+
+    println!("");
     case_mutable();
     println!("--------------------------------");
-
     case_immutable();
     println!("--------------------------------");
-
     case_owned();
     println!("--------------------------------");
-    
     case_box();
     println!("--------------------------------");
-
     case_rc();
     println!("--------------------------------");
-
     case_arc();
     println!("--------------------------------");
-
     case_refcell();
     println!("--------------------------------");
-
     case_mutex();
     println!("--------------------------------");
-
     case_async();
     println!("--------------------------------");
-
     case_async_lifetime();
     println!("--------------------------------");
-
     case_gc();
     println!("--------------------------------");
 

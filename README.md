@@ -5,8 +5,8 @@ The codes show numerous ways to modify a list in Rust, to see what the borrow ch
 ## Basic
 
 ```console
-cd test_mini
-rustc test_ownership.rs && ./test_ownership
+cd basic
+rustc basic.rs && ./basic
 ```
 
 1. Mutable Borrow - Safe lock: You open, modify, and close it.
@@ -16,7 +16,7 @@ rustc test_ownership.rs && ./test_ownership
 ## Advanced
 
 ```console
-cd test_full
+cd advanced
 cargo run
 ```
 

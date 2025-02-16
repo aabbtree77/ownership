@@ -1,8 +1,8 @@
 # Ignore target folder (Rust build output)
-/test_full/target/
+/advanced/target/
 
 # Ignore Cargo.lock inside test_full
-/test_full/Cargo.lock
+/advanced/Cargo.lock
 
 # Ignore all binaries across the repo
 **/target/

@@ -1,5 +1,5 @@
 [package]
-name = "test_full"
+name = "advanced"
 version = "0.1.0"
 edition = "2021"   # Ensure it's Rust 2021
 
