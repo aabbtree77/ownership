@@ -1,3 +1,7 @@
+> "I've got thirteen channels of shit on the T.V. to choose from..."
+>
+> — *Pink Floyd, 1979*
+
 ## Introduction
 
 The codes show numerous ways to modify a list in Rust, to see what the borrow checker is about.
